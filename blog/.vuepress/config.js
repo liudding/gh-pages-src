@@ -1,11 +1,20 @@
+const path = require('path')
+
 module.exports = {
-  title: 'VuePress Blog',
-  description: 'This is a blog example built by VuePress',
+  title: "Ding",
+  description: '',
   head: [
     // ['script', { src: 'https://cdn.bootcdn.net/ajax/libs/medium-zoom/1.0.6/medium-zoom.min.js' }]
   ],
   cache: true,
-  theme: '@vuepress/theme-blog',
+  configureWebpack: {
+    resolve: {
+      alias: {
+        '@images': '../images'
+      }
+    }
+  },
+  // theme: '@vuepress/theme-blog',
   themeConfig: {
     modifyBlogPluginOptions(blogPluginOptions) {
       return blogPluginOptions
@@ -34,14 +43,7 @@ module.exports = {
         }
       ],
       copyright: [
-        {
-          text: 'Privacy Policy',
-          link: 'https://policies.google.com/privacy?hl=en-US',
-        },
-        {
-          text: 'MIT Licensed | Copyright © 2018-present Vue.js',
-          link: '',
-        },
+       
       ],
     },
   },
@@ -50,6 +52,7 @@ module.exports = {
     "@vuepress/back-to-top",
     "@vuepress/nprogress",
     ["@vuepress/active-header-links"],
+    ['smooth-scroll', true],
     ["@vuepress/medium-zoom", {
       selector: 'img',
       options: {
