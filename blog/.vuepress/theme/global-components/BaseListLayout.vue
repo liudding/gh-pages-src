@@ -148,11 +148,17 @@ export default {
 .ui-post
   padding-bottom 25px
   margin-bottom 25px
-  border-bottom 1px solid $borderColor
+
+  padding: 32px
+  border-radius: 16px
+  // border-bottom 1px solid $borderColor
 
   &:last-child
     border-bottom 0px
     margin-bottom 0px
+
+  &:hover
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1)
 
 .ui-post-title
   // font-family PT Serif, Serif 
