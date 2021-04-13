@@ -72,6 +72,7 @@ export default {
 
 <style lang="stylus">
 .post-meta
+  color: gray
   &-tags
     display flex
     flex-wrap wrap
