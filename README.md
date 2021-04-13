@@ -1,13 +1,4 @@
-# dingblog
+# 我的 blog
 
-> palyaround
-
-## Development
-
-```bash
-yarn dev
-yarn build
-```
-
-For more details, please head VuePress's [documentation](https://v1.vuepress.vuejs.org/).
+基于 [VuePress](https://vuepress.vuejs.org/) 搭建的博客
 
