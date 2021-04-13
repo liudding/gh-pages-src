@@ -36,7 +36,7 @@
             itemtype="http://schema.org/Person"
             itemscope
           >
-            <NavigationIcon />
+            <MapPinIcon />
             <span itemprop="name">{{ page.frontmatter.author }}</span>
             <span v-if="page.frontmatter.location" itemprop="address">
               &nbsp; in {{ page.frontmatter.location }}
@@ -44,7 +44,7 @@
           </div>
 
           <div v-if="page.frontmatter.date" class="ui-post-meta ui-post-date">
-            <ClockIcon />
+            <CalendarIcon />
             <time
               pubdate
               itemprop="datePublished"
@@ -85,7 +85,7 @@
 import Vue from 'vue'
 import dayjs from 'dayjs'
 import dayjsPluginUTC from 'dayjs/plugin/utc'
-import { NavigationIcon, ClockIcon, TagIcon } from 'vue-feather-icons'
+import { CalendarIcon, MapPinIcon, TagIcon } from 'vue-feather-icons'
 import {
   Pagination,
   SimplePagination,
@@ -94,7 +94,7 @@ import {
 dayjs.extend(dayjsPluginUTC)
 
 export default {
-  components: { NavigationIcon, ClockIcon, TagIcon },
+  components: { MapPinIcon, CalendarIcon, TagIcon },
 
   data() {
     return {

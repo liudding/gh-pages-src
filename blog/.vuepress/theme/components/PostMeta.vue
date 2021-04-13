@@ -7,12 +7,20 @@
       itemtype="http://schema.org/Person"
       itemscope
     >
-      <NavigationIcon />
+      <PenToolIcon />
       <span itemprop="name">{{ author }}</span>
-      <span v-if="location" itemprop="address"> &nbsp; in {{ location }}</span>
+    </div>
+
+    <div
+      v-if="location"
+      class="post-meta-location"
+      itemscope
+    >
+      <MapPinIcon />
+      <span itemprop="address">{{ location }}</span>
     </div>
     <div v-if="date" class="post-meta-date">
-      <ClockIcon />
+      <CalendarIcon />
       <time pubdate itemprop="datePublished" :datetime="date">
         {{ resolvedDate }}
       </time>
@@ -26,14 +34,14 @@
 <script>
 import dayjs from 'dayjs'
 import dayjsPluginUTC from 'dayjs/plugin/utc'
-import { NavigationIcon, ClockIcon } from 'vue-feather-icons'
+import { PenToolIcon, MapPinIcon, CalendarIcon } from 'vue-feather-icons'
 import PostTag from './PostTag.vue'
 
 dayjs.extend(dayjsPluginUTC)
 
 export default {
   name: 'PostMeta',
-  components: { NavigationIcon, ClockIcon, PostTag },
+  components: { PenToolIcon, MapPinIcon, CalendarIcon, PostTag },
   props: {
     tags: {
       type: [Array, String],
